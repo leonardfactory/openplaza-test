@@ -23,4 +23,4 @@ var app 	= module.exports = express();
 	{
 		res.json(200, { done: 'done' });
 	});
-})
+})(app);
