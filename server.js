@@ -61,9 +61,7 @@ async.waterfall([
 		// Handling errors with Erroneous.js
 		app.use(erroneous.router);
 
-		// Let's call caller done function
-		done();
+		app.listen(process.env.PORT || process.env.NODE_PORT || 8080);
+		console.log('Server is up&running');
 	}	
 ]);
-
-app.listen(process.env.PORT || process.env.NODE_PORT || 8080);
