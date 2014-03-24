@@ -5,6 +5,7 @@ var express 	= require('express'),
 
 var Shop		= require('../model/shop').model;
 var Product		= require('../model/product').model;
+var Preview		= require('../model/preview').model;
 
 var app 	= module.exports = express();
 
