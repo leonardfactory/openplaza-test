@@ -1,6 +1,7 @@
 var express 	= require('express'),
 	config		= require('../config/config'),
 	async 		= require('async'),
+	mongoose 	= require('mongoose'),
 	erroneous	= require('../services/erroneous');
 
 var Shop		= require('../model/shop').model;
@@ -25,6 +26,9 @@ var app 	= module.exports = express();
 		], next);
 	});
 	
+	/**
+	 * Crea un nuovo prodotto, con annessa anteprima, e lo registra nella vetrina del negozio.
+	 */
 	app.post('/product', function (req, res, next)
 	{
 		var _preview_id;
