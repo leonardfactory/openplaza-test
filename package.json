@@ -1,0 +1,19 @@
+{
+  "name": "openplaza-test",
+  "version": "0.0.1",
+  "description": "Openplaza test server for mobile app",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leonardfactory/openplaza-test.git"
+  },
+  "author": "@leonardfactory",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonardfactory/openplaza-test/issues"
+  },
+  "homepage": "https://github.com/leonardfactory/openplaza-test"
+}
