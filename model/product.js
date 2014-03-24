@@ -13,7 +13,7 @@ exports.schema = schema = mongoose.Schema({
     discountedPrice : Number,
     stock           : Number,
     showcase        : Boolean,
-    tag             : [Tag];
+    tag             : [Tag],
 
     preview :   {
         type : mongoose.Schema.Types.ObjectId,
