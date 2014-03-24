@@ -2,7 +2,7 @@
   "name": "openplaza-test",
   "version": "0.0.1",
   "description": "Openplaza test server for mobile app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha"
   },
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/leonardfactory/openplaza-test/issues"
   },
-  "homepage": "https://github.com/leonardfactory/openplaza-test"
+  "homepage": "https://github.com/leonardfactory/openplaza-test",
+  "dependencies": {
+    "async": "~0.2.10",
+    "express": "~3.5.0",
+    "mongoose": "~3.8.8"
+  }
 }
