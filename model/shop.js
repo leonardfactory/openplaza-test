@@ -40,14 +40,12 @@ exports.schema = schema = mongoose.Schema({
         }
     ],
 
-    showcase : {
-        items   : [
-            {
-                type : mongoose.Schema.Types.ObjectId,
-                ref  : "Preview"
-            }
-        ]
-    },
+    showcase : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref  : "Preview"
+        }
+    ],
 
     products : [
         {
