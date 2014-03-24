@@ -18,4 +18,9 @@ var app 	= module.exports = express();
 			}
 		]);
 	});
+	
+	app.get('/hello', function (req, res, next)
+	{
+		res.json(200, { done: 'done' });
+	});
 })
