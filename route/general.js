@@ -36,16 +36,18 @@ var app 	= module.exports = express();
 		async.waterfall([
 			function (callback) 
 			{
+				console.log('product creation');
 				Product.create({
 					name 		: req.body.name,
 					description	: req.body.description,
 					price		: req.body.price,
 					discountedPrice : req.body.discountedPrice,
-					shop		: mongoose.Types.ObjectId(req.body.shop)
+					shop		: req.body.shop
 				}, callback);
 			},
 			function (product, callback) 
 			{
+				console.log('preview creation');
 				Preview.create({
 					title	   : req.body.name,
 					showcase   : req.body.showcase,
@@ -55,12 +57,14 @@ var app 	= module.exports = express();
 			},
 			function (preview, callback) 
 			{
+				console.log('saving inside shop');
 				_preview_id = preview._id;
 				
 				Shop.where({ _id : req.body.shop }).update({ $push : { showcase : preview }}).exec(callback);
 			},
-			function (callback) 
+			function (results, callback) 
 			{
+				console.log('returning');
 				res.json(200, { added: true, preview_id: _preview_id});
 			}
 		], next);
