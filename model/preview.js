@@ -6,7 +6,7 @@ var _        = require('underscore');
 var Tag      = require('./tag').module;
 
 exports.schema = schema = mongoose.Schema({
-    name            : String,
+    title           : String,
     description     : String,
     showcase        : Boolean,
     price           : Number,

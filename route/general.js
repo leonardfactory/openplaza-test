@@ -60,7 +60,7 @@ var app 	= module.exports = express();
 				console.log('saving inside shop');
 				_preview_id = preview._id;
 				
-				Shop.where({ _id : req.body.shop }).update({ $push : { showcase : preview._id }}).exec(callback);
+				Shop.where({ _id : mongoose.Types.ObjectId(req.body.shop) }).update({ $push : { showcase : preview._id }}).exec(callback);
 			},
 			function (results, callback) 
 			{
