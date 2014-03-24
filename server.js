@@ -55,7 +55,7 @@ async.waterfall([
 		}));*/
 
 		// Importing routes and applying them
-		var general 	= require('./routes/general');
+		var general 	= require('./route/general');
 		app.use(general);
 
 		// Handling errors with Erroneous.js
