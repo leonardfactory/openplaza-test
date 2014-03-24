@@ -3,7 +3,7 @@
  */
 var mongoose = require('mongoose');
 var _        = require('underscore');
-var Tag      = require('tag').module;
+var Tag      = require('./tag').module;
 
 exports.schema = schema = mongoose.Schema({
     name            : String,
