@@ -14,6 +14,11 @@ exports.schema = schema = mongoose.Schema({
     stock           : Number,
     showcase        : Boolean,
     tag             : [Tag],
+	
+	shop: {
+		type : mongoose.Schema.Types.ObjectId,
+		ref	 : "Shop"
+	},
 
     preview :   {
         type : mongoose.Schema.Types.ObjectId,

@@ -3,20 +3,25 @@ var express 	= require('express'),
 	async 		= require('async'),
 	erroneous	= require('../services/erroneous');
 
+var Shop		= require('../model/shop').model;
 var Product		= require('../model/product').model;
 
 var app 	= module.exports = express();
 
 (function (app) 
 {
-	app.get('/products', function (req, res, next) 
+	app.get('/shops', function (req, res, next) 
 	{
 		async.waterfall([
 			function (callback) 
 			{
-				callback(null);
+				Shop.find({}).populate('showcase').exec(callback);
+			},
+			function (shops, callback) 
+			{
+				res.json(200, { shops: shops });
 			}
-		]);
+		], next);
 	});
 	
 	app.get('/hello', function (req, res, next)

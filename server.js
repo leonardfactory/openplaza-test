@@ -34,6 +34,9 @@ async.waterfall([
 		        strict_variables: false
 		    });
 		});
+		
+		// Static files
+		app.use(express.static(__dirname + '/images'));
 
 		// Compression
 		app.use(express.compress());
