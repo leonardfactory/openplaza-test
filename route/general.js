@@ -50,6 +50,7 @@ var app 	= module.exports = express();
 				console.log('preview creation');
 				Preview.create({
 					type	   : "product",
+					target	   : product._id,
 					title	   : req.body.name,
 					showcase   : req.body.showcase,
 					price	   : req.body.price,

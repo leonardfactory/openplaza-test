@@ -7,6 +7,7 @@ var Tag      = require('./tag').module;
 
 exports.schema = schema = mongoose.Schema({
 	type			: String,
+	target			: String,
     title           : String,
     description     : String,
     showcase        : Boolean,
