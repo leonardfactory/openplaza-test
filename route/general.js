@@ -72,6 +72,24 @@ var app 	= module.exports = express();
 		], next);
 	});
 	
+	/**
+	 * Singolo prodotto dal db
+	 */
+	app.get('/product/:id', 
+			function (req, res, next)
+	{
+		async.waterfall([
+			function(callback)
+			{
+				Product.where('_id').equals(req.params.id).findOne(callback);
+			},
+			function(product, callback)
+			{
+				res.json(200, product);
+			}
+		], next);
+	});
+	
 	app.get('/hello', function (req, res, next)
 	{
 		res.json(200, { done: 'done' });
