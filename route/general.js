@@ -26,6 +26,21 @@ var app 	= module.exports = express();
 		], next);
 	});
 	
+	app.get('/shop/:id', 
+		function (req, res, next)
+	{
+		async.waterfall([
+			function(callback)
+			{
+				Shop.where('_id').equals(req.params.id).findOne(callback);
+			},
+			function(shop, callback)
+			{
+				res.json(200, shop);
+			}
+		], next);
+	});
+	
 	/**
 	 * Crea un nuovo prodotto, con annessa anteprima, e lo registra nella vetrina del negozio.
 	 */
@@ -41,6 +56,7 @@ var app 	= module.exports = express();
 					name 		: req.body.name,
 					description	: req.body.description,
 					price		: req.body.price,
+					expire		: req.body.expire,
 					discountedPrice : req.body.discountedPrice,
 					shop		: req.body.shop
 				}, callback);
@@ -52,6 +68,7 @@ var app 	= module.exports = express();
 					type	   : "product",
 					target	   : product._id,
 					title	   : req.body.name,
+					expire		: req.body.expire,
 					showcase   : req.body.showcase,
 					price	   : req.body.price,
 					discountedPrice : req.body.discountedPrice

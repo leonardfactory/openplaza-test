@@ -14,7 +14,8 @@ exports.schema = schema = mongoose.Schema({
     price           : Number,
     discount        : Number,
     discountedPrice : Number,
-    tag             : [Tag]
+    tag             : [Tag],
+	expire			: Date
 });
 
 //Aggiungo middleware, metodi e varie allo schema

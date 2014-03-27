@@ -15,6 +15,8 @@ exports.schema = schema = mongoose.Schema({
     showcase        : Boolean,
     tag             : [Tag],
 	
+	expire			: Date,
+	
 	shop: {
 		type : mongoose.Schema.Types.ObjectId,
 		ref	 : "Shop"
