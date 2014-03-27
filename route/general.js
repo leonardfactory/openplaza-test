@@ -56,7 +56,7 @@ var app 	= module.exports = express();
 					name 		: req.body.name,
 					description	: req.body.description,
 					price		: req.body.price,
-					expire		: req.body.expire,
+					expire		: new Date(req.body.expire),
 					discountedPrice : req.body.discountedPrice,
 					shop		: req.body.shop
 				}, callback);
@@ -68,7 +68,7 @@ var app 	= module.exports = express();
 					type	   : "product",
 					target	   : product._id,
 					title	   : req.body.name,
-					expire		: req.body.expire,
+					expire		: new Date(req.body.expire),
 					showcase   : req.body.showcase,
 					price	   : req.body.price,
 					discountedPrice : req.body.discountedPrice
